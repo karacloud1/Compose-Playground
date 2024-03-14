@@ -37,7 +37,7 @@ fun Tutorial1_1Screen() {
 }
 
 @Composable
-fun TutorialContent() {
+private fun TutorialContent() {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         item {
             TutorialHeader(text = "Row")
