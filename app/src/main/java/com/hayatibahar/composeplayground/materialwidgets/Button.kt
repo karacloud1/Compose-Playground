@@ -302,7 +302,7 @@ private fun CustomIconButtonExample(modifier: Modifier) {
         Spacer(modifier = Modifier.width(40.dp))
 
         IndicatingIconButton(
-            onClick = { /*TODO*/ },
+            onClick = { },
             indication = rememberRipple(
                 bounded = false,
                 radius = 30.dp,
