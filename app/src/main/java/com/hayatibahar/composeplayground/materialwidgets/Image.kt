@@ -60,7 +60,6 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import coil.Coil
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
 import com.bumptech.glide.Glide
@@ -73,6 +72,7 @@ import com.hayatibahar.composeplayground.ui.components.StyleableTutorialText
 import com.hayatibahar.composeplayground.ui.components.TutorialHeader
 import com.hayatibahar.composeplayground.ui.components.TutorialText2
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 private fun TutorialContent() {
     LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -280,7 +280,7 @@ private fun DrawOnImageBitmapExample() {
         option
     ).asImageBitmap()
 
-    val canvas: Canvas = Canvas(imageBitmap)
+    val canvas = Canvas(imageBitmap)
 
     val paint = remember {
         Paint().apply {
@@ -746,19 +746,6 @@ private val diamondShape = GenericShape { size: Size, _: LayoutDirection ->
     lineTo(size.width, size.height / 2f)
     lineTo(size.width / 2f, size.height)
     lineTo(0f, size.height / 2f)
-}
-
-private val triangleShape = GenericShape { size: Size, layoutDirection: LayoutDirection ->
-    val path = Path()
-    path.apply {
-
-        moveTo(0f, 0f)
-        lineTo(size.width, 0f)
-        lineTo(0f, size.height)
-        lineTo(0f, 0f)
-    }
-
-    addPath(path = path)
 }
 
 
